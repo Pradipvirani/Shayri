@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/s1_img"
-        android:textSize="@dimen/_30sdp"
+        android:textSize="@dimen/_15sdp"
         android:layout_margin="@dimen/_15sdp"
         android:hint="Text"
         android:id="@+id/s1_txt"

@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Custom_Adapter extends BaseAdapter {
+public class  Custom_Adapter extends BaseAdapter {
     MainActivity mainActivity;
     int[] image;
     String[] type;

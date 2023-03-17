@@ -2,7 +2,10 @@ package com.example.shayri;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,5 +20,15 @@ public class MainActivity extends AppCompatActivity {
         custom_adapter=new Custom_Adapter(MainActivity.this,type,image);
         lv=findViewById(R.id.activity_main_lv);
         lv.setAdapter(custom_adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                intent.putExtra("i",position);
+                intent.putExtra("image",image[position]);
+                startActivity(intent);
+
+            }
+        });
     }
 }
