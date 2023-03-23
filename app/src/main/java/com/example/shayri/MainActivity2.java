@@ -542,5 +542,7 @@ public class MainActivity2 extends AppCompatActivity {
       if (i==9){
           custom_adapter2=new Custom_Adapter2(MainActivity2.this,bewafashayri,image);
       }
+      listView=findViewById(R.id.activity2_main_lv2);
+      listView.setAdapter(custom_adapter2);
     }
 }
