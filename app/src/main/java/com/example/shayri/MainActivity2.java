@@ -2,10 +2,7 @@ package com.example.shayri;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -545,79 +542,5 @@ public class MainActivity2 extends AppCompatActivity {
       if (i==9){
           custom_adapter2=new Custom_Adapter2(MainActivity2.this,bewafashayri,image);
       }
-      listView=findViewById(R.id.activity2_main_lv2);
-      listView.setAdapter(custom_adapter2);
-      listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-          @Override
-          public void onItemClick(AdapterView<?> adapterView, View view, int i1, long l) {
-              Intent intent=new Intent(MainActivity2.this,Shayriopen.class) ;
-              if(i==0)
-              {
-                intent.putExtra("shayri",lvshayri);
-                intent.putExtra("pos",i1);
-              }
-              if (i==1)
-              {
-                  intent.putExtra("Shayri",bdshayri[i1]);
-                  intent.putExtra("s",bdshayri);
-                  intent.putExtra("i1",i1);
-              }
-              if (i==2)
-              {
-                  intent.putExtra("Shayri",fdshayri[i1]);
-                  intent.putExtra("s",fdshayri);
-                  intent.putExtra("i1",i1);
-
-              }
-              if (i==3)
-              {
-                  intent.putExtra("Shayri",rmshayri[i1]);
-                  intent.putExtra("s",rmshayri);
-                  intent.putExtra("i1",i1);
-
-              }
-              if (i==4)
-              {
-                  intent.putExtra("Shayri",ydshayri[i1]);
-                  intent.putExtra("s",ydshayri);
-                  intent.putExtra("i1",i1);
-
-              }
-              if (i==5)
-              {
-                  intent.putExtra("Shayri",gmshayri[i1]);
-                  intent.putExtra("s",gmshayri);
-                  intent.putExtra("i1",i1);
-
-              }
-              if (i==6)
-              {
-                      intent.putExtra("Shayri",gnshayri[i1]);
-                      intent.putExtra("s",gnshayri);
-                      intent.putExtra("i1",i1);
-
-              }
-              if (i==7)
-              {
-                  intent.putExtra("Shayri",fnnyshayri[i1]);
-                  intent.putExtra("s",fnnyshayri);
-                  intent.putExtra("i1",i1);
-              }
-              if (i==8)
-              {
-                  intent.putExtra("Shayri",judaishayri[i1]);
-                  intent.putExtra("s",judaishayri);
-                  intent.putExtra("i1",i1);
-              }
-              if (i==9)
-              {
-                  intent.putExtra("Shayri",bewafashayri[i1]);
-                  intent.putExtra("s",bewafashayri);
-                  intent.putExtra("i1",i1);
-              }
-              startActivity(intent);
-          }
-      });
-
     }
 }
