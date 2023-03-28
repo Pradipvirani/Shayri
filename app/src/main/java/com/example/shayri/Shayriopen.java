@@ -25,7 +25,8 @@ public class Shayriopen extends AppCompatActivity {
         textView=findViewById(R.id.Shayri_open_txt);
       k=getIntent().getIntExtra("pos",0);
       shayriarr=getIntent().getStringArrayExtra("shayri");
-      textView.setText(shayriarr[k]);
+      shayri=getIntent().getStringExtra("shayri");
+      textView.setText(""+shayri);
 
 
     }
