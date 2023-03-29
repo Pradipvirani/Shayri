@@ -14,14 +14,15 @@ public class MainActivity2 extends AppCompatActivity {
             "दिल-ओ-नजर को रुला-रुला के देखा है," +"\n"+
             "तू नहीं तो कुछ भी नहीं है तेरी कसम," +"\n"+
             "ैंने कुछ पल तुझे भुला के देखा है।",
-            "हम आपकी हर चीज़ से प्यार कर लेंगे," +
+            "हम आपकी हर चीज़ से प्यार कर लेंगे," +"\n" +
                     "आपकी हर बात पर ऐतबार कर लेंगे," +"\n"+
                     "बस एक बार कह दो कि तुम सिर्फ मेरे हो," +"\n"+
                     "हम ज़िन्दगी भर आपका इंतज़ार कर लेंगे।",
             "अगर इश्क करो तो आदाब-ए-वफ़ा भी सीखो," +"\n"+
                     "ये चंद दिन की बेकरारी मोहब्बत नहीं होती।",
             "जान-ए-मन काम तो अच्छा है मोहब्बत लेकिन," +"\n"+
-                    "हमको इस काम के अंजाम से डर लगता है।",
+                    "हमको इस काम के अंजाम से" +
+                    " डर लगता है।",
             "जागने की भी जगाने की भी आदत हो जाए," +"\n"+
                     "काश तुझको किसी शायर से मोहब्बत हो जाए।",
             "दुनिया के सितम याद न अपनी ही वफ़ा याद," +"\n"+
@@ -547,71 +548,72 @@ public class MainActivity2 extends AppCompatActivity {
           custom_adapter2=new Custom_Adapter2(MainActivity2.this,bewafashayri,image);
       }
       listView.setAdapter(custom_adapter2);
-
-          listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-              @Override
-              public void onItemClick(AdapterView<?> adapterView, View view, int i1, long l) {
-                  Intent intent = new Intent(MainActivity2.this,Shayriopen.class);
-                  if(i==0) {
-                      intent.putExtra("shayr", lvshayri);
-                      intent.putExtra("shayri", lvshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==1) {
-                      intent.putExtra("shayri", bdshayri);
-                      intent.putExtra("shayri", bdshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==2) {
-                      intent.putExtra("shayri", fdshayri);
-                      intent.putExtra("shayri", fdshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==3) {
-                      intent.putExtra("shayri", rmshayri);
-                      intent.putExtra("shayri", rmshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==4) {
-                      intent.putExtra("shayri", ydshayri);
-                      intent.putExtra("shayri", ydshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==5) {
-                      intent.putExtra("shayri", gmshayri);
-                      intent.putExtra("shayri", gmshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==6) {
-                      intent.putExtra("shayri", gnshayri);
-                      intent.putExtra("shayri", gnshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==7) {
-                      intent.putExtra("shayri", fnnyshayri);
-                      intent.putExtra("shayri", fnnyshayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==8) {
-                      intent.putExtra("shayri", judaishayri);
-                      intent.putExtra("shayri", judaishayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-                  if(i==9) {
-                      intent.putExtra("shayri", bewafashayri);
-                      intent.putExtra("shayri", bewafashayri[i1]);
-                      intent.putExtra("pos", i1);
-                  }
-
-
-
-                  startActivity(intent);
-
-              }
-          });
+    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i1, long l) {
+            Intent intent = new Intent(MainActivity2.this,Shayriopen.class);
+            if(i==0)
+            {
+                intent.putExtra("shayri",lvshayri);
+                intent.putExtra("shayri",lvshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==1)
+            {
+                intent.putExtra("shayri",bdshayri);
+                intent.putExtra("shayri",bdshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==2)
+            {
+                intent.putExtra("shayri",fdshayri);
+                intent.putExtra("shayri",fdshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==3)
+            {
+                intent.putExtra("shayri",rmshayri);
+                intent.putExtra("shayri",rmshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==4)
+            {
+                intent.putExtra("shayri",ydshayri);
+                intent.putExtra("shayri",ydshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==5)
+            {
+                intent.putExtra("shayri",gmshayri);
+                intent.putExtra("shayri",gmshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==6)
+            {
+                intent.putExtra("shayri",gnshayri);
+                intent.putExtra("shayri",gnshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==7)
+            {
+                intent.putExtra("shayri",fnnyshayri);
+                intent.putExtra("shayri",fnnyshayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==8)
+            {
+                intent.putExtra("shayri",judaishayri);
+                intent.putExtra("shayri",judaishayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            if(i==9)
+            {
+                intent.putExtra("shayri",bewafashayri);
+                intent.putExtra("shayri",bewafashayri[i1]);
+                intent.putExtra("pos",i1);
+            }
+            startActivity(intent);
         }
+    });
     }
-
-
-
-
+}
