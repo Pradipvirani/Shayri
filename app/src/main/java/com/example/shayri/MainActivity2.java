@@ -554,61 +554,61 @@ public class MainActivity2 extends AppCompatActivity {
             Intent intent = new Intent(MainActivity2.this,Shayriopen.class);
             if(i==0)
             {
-                intent.putExtra("shayri",lvshayri);
+                intent.putExtra("shayr",lvshayri);
                 intent.putExtra("shayri",lvshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==1)
             {
-                intent.putExtra("shayri",bdshayri);
+                intent.putExtra("shayr",bdshayri);
                 intent.putExtra("shayri",bdshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==2)
             {
-                intent.putExtra("shayri",fdshayri);
+                intent.putExtra("shayr",fdshayri);
                 intent.putExtra("shayri",fdshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==3)
             {
-                intent.putExtra("shayri",rmshayri);
+                intent.putExtra("shayr",rmshayri);
                 intent.putExtra("shayri",rmshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==4)
             {
-                intent.putExtra("shayri",ydshayri);
+                intent.putExtra("shayr",ydshayri);
                 intent.putExtra("shayri",ydshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==5)
             {
-                intent.putExtra("shayri",gmshayri);
+                intent.putExtra("shayr",gmshayri);
                 intent.putExtra("shayri",gmshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==6)
             {
-                intent.putExtra("shayri",gnshayri);
+                intent.putExtra("shayr",gnshayri);
                 intent.putExtra("shayri",gnshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==7)
             {
-                intent.putExtra("shayri",fnnyshayri);
+                intent.putExtra("shayr",fnnyshayri);
                 intent.putExtra("shayri",fnnyshayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==8)
             {
-                intent.putExtra("shayri",judaishayri);
+                intent.putExtra("shayr",judaishayri);
                 intent.putExtra("shayri",judaishayri[i1]);
                 intent.putExtra("pos",i1);
             }
             if(i==9)
             {
-                intent.putExtra("shayri",bewafashayri);
+                intent.putExtra("shayr",bewafashayri);
                 intent.putExtra("shayri",bewafashayri[i1]);
                 intent.putExtra("pos",i1);
             }

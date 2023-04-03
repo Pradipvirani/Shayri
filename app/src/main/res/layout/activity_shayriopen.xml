@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Shayriopen"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+     >
+
     <LinearLayout
         android:layout_width="@dimen/_312sdp"
         android:layout_height="wrap_content">
@@ -25,22 +27,79 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1">
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_15sdp"
-        android:id="@+id/Shayri_open_txt"
-        android:textAlignment="center"
-        android:hint="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        />
+        <TextView
+            android:id="@+id/Shayri_open_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:textAlignment="center"
+            android:hint="text"
+            android:textSize="@dimen/_15sdp"
+
+            />
 
     </androidx.cardview.widget.CardView>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+
+        >
+
+        <Button
+            android:id="@+id/Copy_button"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/img_11" />
+
+        <Button
+            android:id="@+id/Left_button"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_toRightOf="@id/Copy_button"
+            android:background="@drawable/img_12" />
+        <Button
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:id="@+id/Edit_button"
+            android:background="@drawable/img_14"
+            android:layout_margin="@dimen/_8sdp"
+            android:layout_toRightOf="@id/Left_button"/>
+
+        <Button
+            android:id="@+id/Right_button"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_toRightOf="@id/Edit_button"
+            android:background="@drawable/img_13" />
+        <Button
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:id="@+id/Share_button"
+            android:background="@drawable/img_15"
+            android:layout_margin="@dimen/_6sdp"
+            android:layout_toRightOf="@id/Right_button"/>
+
+    </RelativeLayout>
 </LinearLayout>
