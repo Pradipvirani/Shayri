@@ -1,10 +1,18 @@
 package com.example.shayri;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,9 +21,17 @@ import android.widget.GridView;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class Edit_shyari extends AppCompatActivity implements View.OnClickListener {
@@ -26,6 +42,10 @@ public class Edit_shyari extends AppCompatActivity implements View.OnClickListen
     SeekBar seekBar;
     String type;
     Button colourchange,zoom,backgroud,textcolour,share,font,emoji,textsize;
+    File localefile;
+    String permission []={Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +70,6 @@ public class Edit_shyari extends AppCompatActivity implements View.OnClickListen
         font.setOnClickListener(this);
         emoji.setOnClickListener(this);
         textsize.setOnClickListener(this);
-
-
-
 
 
 
@@ -186,5 +203,58 @@ public class Edit_shyari extends AppCompatActivity implements View.OnClickListen
             });
             bottomSheetDialog.show();
         }
+        if (view.getId()==share.getId())
+        {
+            requestPermissions(permission,1);
+
+        }
+    }
+    private Bitmap getBitmapFromView(View view)
+    {
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(),Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        Drawable drawable = view.getBackground();
+        if (drawable != null)
+        {
+            drawable.draw(canvas);
+        }
+        else
+        {
+            canvas.drawColor(Color.WHITE);
+        }
+        view.draw(canvas);
+        return returnedBitmap;
+    }
+    @Override
+ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+       if(grantResults[0]== PackageManager.PERMISSION_GRANTED || grantResults[1]==PackageManager.PERMISSION_GRANTED)
+        {
+            Bitmap bitmap = getBitmapFromView(textView);
+            Intent share = new Intent(Intent.ACTION_SEND);
+            share.setType("image/jpeg");
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+            int num=new Random().nextInt(2000);
+            SimpleDateFormat s = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+            String c = s.format(new Date());
+            localefile=new File(Config.file.getAbsolutePath()+"img/"+c+".jpg");
+            try {
+                localefile.createNewFile();
+                FileOutputStream fo= new FileOutputStream(localefile);
+                fo.write(byteArrayOutputStream.toByteArray());
+                Toast.makeText(this, "dowenload", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            share.putExtra(Intent.EXTRA_STREAM, Uri.parse(localefile.getAbsolutePath()));
+            startActivity(Intent.createChooser(share,"share...."));
+
+        }
+        else
+        {
+            finish();
+        }
+
     }
 }

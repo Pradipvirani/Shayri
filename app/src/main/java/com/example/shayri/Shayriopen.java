@@ -120,5 +120,6 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
             startActivity(intent);
         }
 
+
     }
 }
